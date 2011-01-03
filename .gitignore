@@ -1,0 +1,6 @@
+output
+tags
+comments
+*.sw?
+*.py[^x]
+*.sqlite3
