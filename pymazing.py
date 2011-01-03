@@ -4,9 +4,8 @@ import logging
 
 WHITE=255
 
-m = Image.open("maze.png")
-draw  =  ImageDraw.Draw(m)
-
+m = Image.open("mazes/Maze1.gif")
+m = m.convert("RGB")
 
 current_path = []
 
@@ -14,8 +13,11 @@ visited = {}
 original = m.load()
 cells = m.convert("1").load()
 
-end = (125, 200)
-start = (0, 0)
+
+draw = ImageDraw.Draw(m)
+
+end = (367, 401)
+start = (398, 37)
 path_matrix = { start : ((-1, -1), 0) }
 
 max_x, max_y = m.size
@@ -65,7 +67,8 @@ while queue:
       x,y=  back_cell
       x1,y1 = x-2, y-2
       x2,y2 = x+2, y+2
-      draw.ellipse([x1,y1,x2,y2], fill=(0,200,25))
+      original[x,y] = 25
+      draw.ellipse([x1,y1,x2,y2], fill="#0f0")
     break
   queue.extend(visit_cell(cell))
 
