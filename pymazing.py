@@ -4,7 +4,7 @@ import logging
 
 WHITE=255
 
-m = Image.open("mazes/Maze1.gif")
+m = Image.open("mazes/Maze2.gif")
 m = m.convert("RGB")
 
 current_path = []
@@ -16,8 +16,8 @@ cells = m.convert("1").load()
 
 draw = ImageDraw.Draw(m)
 
-end = (367, 401)
-start = (398, 37)
+end = (10, 800)
+start = (116, 10)
 path_matrix = { start : ((-1, -1), 0) }
 
 max_x, max_y = m.size
