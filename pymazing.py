@@ -1,10 +1,11 @@
 from PIL import Image, ImageDraw
 from collections import defaultdict
 import logging
+import sys
 
 WHITE=255
 
-m = Image.open("mazes/Maze3.gif")
+m = Image.open(sys.argv[1])
 m = m.convert("RGB")
 
 current_path = []
@@ -16,8 +17,8 @@ cells = m.convert("1").load()
 
 draw = ImageDraw.Draw(m)
 
-end = (720, 487)
-start = (20, 530)
+end = (1798, 1798)
+start = (4, 4)
 path_matrix = { start : ((-1, -1), 0) }
 
 max_x, max_y = m.size
